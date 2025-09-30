@@ -1,0 +1,163 @@
+---
+const pageTitle = "You're Subscribed — Automation in Africa";
+const pageDescription = "Thanks for subscribing to Automation in Africa. Here are a few next steps while you wait for the first issue.";
+---
+
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-K2DLSDGK');</script>
+      <!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --panel: #f5f7fb;
+        --muted: #5b667a;
+        --text: #0b1020;
+        --accent: #006a43;
+        --accent-strong: #005a38;
+        --ring: #006a4326;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+        background: radial-gradient(1200px 800px at 20% -10%, #e8f5ef 0%, #ffffff 70%), var(--bg);
+        color: var(--text);
+      }
+      .container { max-width: 1120px; margin: 0 auto; padding: 24px; }
+
+      .hero {
+        padding: 84px 0 28px;
+        text-align: center;
+      }
+      .eyebrow { color: var(--accent); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; }
+      .title { font-size: 42px; line-height: 1.1; margin: 14px 0 12px; font-weight: 800; }
+      .subtitle { color: var(--muted); font-size: 18px; line-height: 1.6; margin: 0; }
+
+      .card-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin: 28px 0 8px;
+      }
+      .card {
+        background: linear-gradient(180deg, #ffffff, #f9fbff);
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 18px;
+        display: grid;
+        gap: 10px;
+      }
+      .card h3 { margin: 0; font-size: 18px; }
+      .card p { margin: 0; color: var(--muted); }
+      .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+      .button {
+        background: var(--accent-strong);
+        color: #ffffff;
+        font-weight: 700;
+        border: none;
+        border-radius: 10px;
+        padding: 14px 18px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .button:hover { background: var(--accent); }
+      .button.secondary {
+        background: #ffffff;
+        color: var(--accent-strong);
+        border: 1px solid #cdebd8;
+      }
+      .note {
+        margin-top: 18px;
+        color: var(--muted);
+      }
+
+      .footer {
+        background: #f7fbf9;
+        border-top: 1px solid #e5e7eb;
+        margin-top: 28px;
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+      .brand { display: flex; align-items: center; gap: 12px; }
+      .logo {
+        width: 36px; height: 36px; border-radius: 8px;
+        display: grid; place-items: center;
+        background: #e8f6ef; color: var(--accent-strong);
+        font-weight: 800;
+      }
+      .brand-name { margin: 0; font-size: 16px; }
+      .brand-tag { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
+
+      @media (max-width: 900px) {
+        .card-row { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2DLSDGK"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    <main class="container">
+      <section class="hero">
+        <div class="eyebrow">You're in</div>
+        <h1 class="title">Thanks for Subscribing</h1>
+        <p class="subtitle">You’ll receive Automation in Africa every Tuesday. Your free report is on the way.</p>
+      </section>
+
+      <section class="container">
+        <div class="card-row">
+          <div class="card">
+            <h3>Catch Up on Previous Posts</h3>
+            <p>Browse earlier issues while you wait for your first newsletter.</p>
+            <div class="actions">
+              <a class="button" href="https://supplycheck.beehiiv.com" target="_blank" rel="noopener noreferrer">Open Newsletter Archive</a>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Check SBTi Status for Your Supply Chain</h3>
+            <p>See which partners are aligned with science‑based targets.</p>
+            <div class="actions">
+              <a class="button" href="https://www.supplycheck.co.uk" target="_blank" rel="noopener noreferrer">Review SBTi Status</a>
+              <a class="button secondary" href="/automation-in-africa/" rel="noopener noreferrer">Back to Home</a>
+            </div>
+          </div>
+        </div>
+        <p class="note">Didn’t get the email? Check your spam folder or add us to your contacts.</p>
+      </section>
+    </main>
+    <footer class="footer" aria-labelledby="footer-title">
+      <div class="container footer-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">SC</div>
+          <div>
+            <h4 id="footer-title" class="brand-name">Supplycheck</h4>
+            <p class="brand-tag">Pragmatic automation insights for African operators.</p>
+          </div>
+        </div>
+        <div class="brand-tag">© 2025 SupplyCheck Ltd.</div>
+      </div>
+    </footer>
+  </body>
+  </html>

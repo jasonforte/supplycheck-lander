@@ -1,0 +1,456 @@
+---
+// AI Automation Discovery Session — Landing Page (design-only)
+const pageTitle = "AI Automation Discovery Session — SupplyCheck";
+const pageDescription = "Unlock £50,000+ in annual savings with a free 30‑minute discovery session. Get tailored automation opportunities, ROI estimates, and an actionable 90‑day plan.";
+---
+
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-K2DLSDGK');</script>
+      <!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --panel: #f5f7fb;
+        --muted: #5b667a;
+        --text: #0b1020;
+        --accent: #006a43;
+        --accent-strong: #005a38;
+        --ring: #006a4326;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+        background: radial-gradient(1200px 800px at 20% -10%, #e8f5ef 0%, #ffffff 70%), var(--bg);
+        color: var(--text);
+      }
+      .container { max-width: 1120px; margin: 0 auto; padding: 24px; }
+
+      /* Hero */
+      .hero {
+        padding: 72px 0 24px;
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 36px;
+        align-items: center;
+      }
+      .eyebrow { color: var(--accent); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; }
+      .title { font-size: 44px; line-height: 1.1; margin: 12px 0 12px; font-weight: 800; }
+      .subtitle { color: var(--muted); font-size: 18px; line-height: 1.6; margin: 0 0 16px; }
+      .value { background: linear-gradient(180deg, #ffffff, #f7fbf9); border: 1px solid #cdebd8; border-radius: 14px; padding: 16px; box-shadow: 0 0 0 6px var(--ring); }
+      .cta-row { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+      .button { background: var(--accent-strong); color: #ffffff; font-weight: 700; border: none; border-radius: 10px; padding: 14px 18px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+      .button:hover { background: var(--accent); }
+      .hero-graphic { background: radial-gradient(420px 240px at 80% 20%, #daf2e6 0%, #e9f7ef 45%, #f7fbf9 80%); border: 1px solid #cdebd8; border-radius: 16px; height: 360px; display: grid; place-items: center; position: relative; overflow: hidden; }
+      .blob { position: absolute; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #006a4322, transparent 60%); filter: blur(10px); animation: float 10s ease-in-out infinite; }
+      @keyframes float { 0%, 100% { transform: translateY(-6px);} 50% { transform: translateY(6px);} }
+
+      /* Sections */
+      .section { padding: 36px 0 12px; }
+      .section h2 { font-size: 28px; margin: 0 0 8px; }
+      .section p.desc { margin: 0 0 18px; color: var(--muted); }
+      .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+      .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .card { background: linear-gradient(180deg, #ffffff, #f9fbff); border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; }
+      .card h3 { margin: 0 0 6px; font-size: 18px; }
+      .card p { margin: 0; color: var(--muted); }
+      .bullets { margin: 0 0 12px; padding-left: 20px; }
+      .bullets li { margin: 6px 0; }
+      .checklist { padding-left: 18px; color: var(--muted); }
+      .checklist li { margin: 6px 0; list-style: "✓ "; color: var(--text); }
+
+      /* Steps */
+      .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .step { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; }
+      .step h4 { margin: 0 0 6px; font-size: 16px; }
+
+      /* Form */
+      .form { display: grid; gap: 10px; margin-top: 8px; }
+      .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .input, .select, .textarea { background: #ffffff; border: 1px solid #cbd5e1; color: var(--text); padding: 14px; border-radius: 10px; outline: none; }
+      .textarea { min-height: 90px; resize: vertical; }
+      .button-lg { padding: 16px 22px; font-size: 14px; }
+
+      /* Testimonials */
+      .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      blockquote { margin: 0; padding: 14px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; }
+      blockquote footer { margin-top: 8px; color: var(--muted); }
+
+      /* FAQ */
+      .faq-items { display: grid; gap: 10px; }
+      details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 12px 14px; }
+      summary { cursor: pointer; }
+
+      /* Footer */
+      .footer { background: #f7fbf9; border-top: 1px solid #e5e7eb; margin-top: 24px; }
+      .footer-inner { display: flex; justify-content: space-between; align-items: center; padding-top: 18px; padding-bottom: 18px; }
+      .brand { display: flex; align-items: center; gap: 12px; }
+      .logo { width: 36px; height: 36px; border-radius: 8px; display: grid; place-items: center; background: #e8f6ef; color: var(--accent-strong); font-weight: 800; }
+      .brand-name { margin: 0; font-size: 16px; }
+      .brand-tag { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .hero { grid-template-columns: 1fr; }
+        .grid-3, .steps, .testimonials { grid-template-columns: 1fr; }
+        .grid-2, .row { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2DLSDGK"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    <main class="container">
+      <!-- Hero -->
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Free 30‑minute session</div>
+          <h1 class="title">Unlock £50,000+ in Annual Savings with AI Automation – In Just 30 Minutes</h1>
+          <p class="subtitle">Schedule your free Discovery Session today. Our experts will pinpoint 3–5 tailored automation opportunities in your business, complete with precise time and cost savings estimates.</p>
+          <div class="value"><strong>Pure value, no pitches.</strong> Get a customized analysis of your workflows, revealing real opportunities to streamline operations and boost profitability.</div>
+          <div class="cta-row">
+            <a href="#booking" class="button button-lg">BOOK YOUR FREE SESSION NOW</a>
+          </div>
+        </div>
+        <div class="hero-graphic">
+          <div class="blob"></div>
+          <div class="card" style="backdrop-filter: blur(6px); border-color:#cdebd8">
+            <h3 style="margin:0 0 6px">What we’ll deliver</h3>
+            <ul class="bullets" style="margin:0">
+              <li>3–5 high‑impact opportunities</li>
+              <li>ROI and time‑savings estimates</li>
+              <li>90‑day implementation plan</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- What You'll Get -->
+      <section class="section" id="what-you-get">
+        <h2>In Your 30‑Minute Discovery Session, You'll Receive:</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Workflow Review (10 minutes)</h3>
+            <ul class="bullets">
+              <li>Examine your existing manual tasks that drain resources</li>
+              <li>Spot inefficiencies ripe for automation</li>
+              <li>Outline processes primed for quick wins</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Opportunity Identification (15 minutes)</h3>
+            <ul class="bullets">
+              <li>Pinpoint 3–5 high‑impact automation targets</li>
+              <li>Quantify time savings and financial benefits for each</li>
+              <li>Rank them by potential ROI and ease of rollout</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Actionable Plan (5 minutes)</h3>
+            <ul class="bullets">
+              <li>Build a tailored 90‑day implementation strategy</li>
+              <li>Suggest tools that align with your budget and setup</li>
+              <li>Detail the steps and resources needed to launch</li>
+            </ul>
+          </div>
+        </div>
+        <ul class="checklist">
+          <li><strong>Comprehensive Opportunity Report</strong> (sent via email within 24 hours)</li>
+          <li><strong>ROI Projections</strong> based on your business data</li>
+          <li><strong>Step‑By‑Step Timeline</strong> with achievable goals</li>
+          <li><strong>Industry‑Specific Tool Suggestions</strong> for seamless integration</li>
+          <li><strong>Immediate Action Checklist</strong> to kickstart your automation journey</li>
+        </ul>
+      </section>
+
+      <!-- Perfect For -->
+      <section class="section" id="perfect-for">
+        <h2>This Session is Right for You If:</h2>
+        <div class="grid-2">
+          <div class="card">
+            <ul class="bullets">
+              <li>You're losing 10+ hours weekly to routine admin work</li>
+              <li>Manual data handling is slowing down your operations</li>
+              <li>You're aiming for 15–30% cost cuts in the next 6 months</li>
+              <li>You're interested in AI but need practical starting points</li>
+              <li>Your team of 5–50 could gain from smarter workflows</li>
+              <li>You operate in manufacturing, distribution, or logistics across Africa or the UK</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Our Expertise Covers:</h3>
+            <ul class="bullets">
+              <li><strong>Manufacturing</strong> (streamlining inventory, quality checks, and production scheduling)</li>
+              <li><strong>Distribution & Logistics</strong> (automating orders, tracking, and supplier coordination)</li>
+              <li><strong>Import/Export</strong> (handling docs, compliance, and client interactions)</li>
+              <li><strong>Retail Operations</strong> (optimizing stock, support, and analytics)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Case Study Preview -->
+      <section class="section" id="case-studies">
+        <h2>Proven Results from Real Clients:</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Kenyan Coffee Distributor</h3>
+            <ul class="bullets">
+              <li><strong>Pain Point:</strong> 15 hours/week on manual inventory tracking</li>
+              <li><strong>Automation Win:</strong> Real‑time inventory system integration</li>
+              <li><strong>Outcome:</strong> Cut time by 80%, saving £18,000 yearly in labor costs</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>South African Manufacturer</h3>
+            <ul class="bullets">
+              <li><strong>Pain Point:</strong> 2 days per batch for quality reporting</li>
+              <li><strong>Automation Win:</strong> AI‑driven analysis and auto‑reports</li>
+              <li><strong>Outcome:</strong> Reports done same‑day, speeding production by 60%</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>UK‑Africa Import Business</h3>
+            <ul class="bullets">
+              <li><strong>Pain Point:</strong> 20+ hours weekly on shipping paperwork</li>
+              <li><strong>Automation Win:</strong> Auto‑generation and compliance verification</li>
+              <li><strong>Outcome:</strong> Reduced time by 85%, halved compliance mistakes</li>
+            </ul>
+          </div>
+        </div>
+        <p class="desc">These examples highlight typical benefits — your results will depend on your specific operations.</p>
+      </section>
+
+      <!-- How It Works -->
+      <section class="section" id="how-it-works">
+        <h2>Easy 3‑Step Journey to Automation Insights:</h2>
+        <div class="steps">
+          <div class="step">
+            <h4>Step 1: Schedule</h4>
+            <ul class="bullets">
+              <li>Pick a 30‑minute time that suits you</li>
+              <li>Fill out a quick 2‑minute questionnaire</li>
+              <li>Get instant confirmation and prep materials</li>
+            </ul>
+          </div>
+          <div class="step">
+            <h4>Step 2: Engage in the Session</h4>
+            <ul class="bullets">
+              <li>Share screens to review your workflows live</li>
+              <li>Discover opportunities with on‑the‑spot analysis</li>
+              <li>See real‑time savings calculations and priorities</li>
+            </ul>
+          </div>
+          <div class="step">
+            <h4>Step 3: Implement with Confidence</h4>
+            <ul class="bullets">
+              <li>Receive your detailed report in 24 hours</li>
+              <li>Follow the customized timeline and milestones</li>
+              <li>Access optional guidance for next moves</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Credentials -->
+      <section class="section" id="team">
+        <h2>Your Partners in Automation Success</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>At SupplyCheck, Our AI Specialists Offer:</h3>
+            <ul class="bullets">
+              <li><strong>Over 50 Proven Projects</strong> in the UK‑Africa supply chain</li>
+              <li><strong>Specialized Knowledge</strong> in core workflows for manufacturing, distribution, and logistics</li>
+              <li><strong>Hands‑On Experience</strong> — we design, deploy, and optimize solutions</li>
+              <li><strong>Local Insights</strong> — tailored to African infrastructure and practical budgets</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Why Our Approach Delivers:</h3>
+            <ul class="bullets">
+              <li><strong>Team‑Centric</strong> — enhances your staff's productivity without job displacement</li>
+              <li><strong>Comprehensive Support</strong> — from ideas to execution, we're with you</li>
+              <li><strong>Scalable Solutions</strong> — built to grow as your business expands</li>
+              <li><strong>Evidence‑Based</strong> — recommendations grounded in data and real‑world applications</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking -->
+      <section class="section" id="booking">
+        <h2>Secure Your Free AI Automation Discovery Session</h2>
+        <p class="desc"><strong>⏰ Length:</strong> 30 minutes &nbsp; • &nbsp; <strong>💰 Cost:</strong> Zero — no obligations &nbsp; • &nbsp; <strong>📍 Platform:</strong> Google Meet or Zoom &nbsp; • &nbsp; <strong>📅 Times:</strong> Weekdays, 9 AM – 5 PM GMT</p>
+        <form class="form" aria-label="Booking form (design-only)">
+          <div class="row">
+            <input class="input" type="text" placeholder="Company Name" aria-label="Company Name" />
+            <select class="select" aria-label="Industry">
+              <option>Industry</option>
+              <option>Manufacturing</option>
+              <option>Distribution</option>
+              <option>Logistics</option>
+              <option>Import-Export</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="row">
+            <select class="select" aria-label="Team Size">
+              <option>Team Size</option>
+              <option>1-10</option>
+              <option>11-25</option>
+              <option>26-50</option>
+              <option>51-100</option>
+              <option>100+</option>
+            </select>
+            <select class="select" aria-label="Location">
+              <option>Location</option>
+              <option>South Africa</option>
+              <option>Kenya</option>
+              <option>UK</option>
+              <option>EU</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <textarea class="textarea" placeholder="What's your team's biggest manual bottleneck?" aria-label="Main Time Drain"></textarea>
+          <div class="row">
+            <input class="input" type="email" placeholder="Work Email" aria-label="Email" />
+            <input class="input" type="text" placeholder="Preferred Date/Time (optional)" aria-label="Preferred Date/Time" />
+          </div>
+          <div class="cta-row">
+            <button type="button" class="button button-lg">BOOK MY FREE DISCOVERY SESSION</button>
+          </div>
+        </form>
+        <ol class="checklist" style="margin-top:12px">
+          <li><strong>Immediate Invite</strong> with calendar add and prep guide</li>
+          <li><strong>Optional Pre‑Email</strong> with targeted questions</li>
+          <li><strong>Focused Session</strong> with expert insights</li>
+          <li><strong>Rapid Report</strong> delivery in 24 hours</li>
+          <li><strong>Voluntary Next Steps</strong> — support if you choose</li>
+        </ol>
+      </section>
+
+      <!-- No-Risk Guarantee -->
+      <section class="section" id="guarantee">
+        <h2>Our Commitment to Your Success</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Value Assurance</h3>
+            <p>If we don't uncover at least 3 opportunities worth £10,000+ in yearly savings, we'll extend the session at no cost until we do.</p>
+          </div>
+          <div class="card">
+            <h3>Pressure‑Free Experience</h3>
+            <p>This is all about discovery — no hard sells. We'll provide honest insights and options, even if they point elsewhere.</p>
+          </div>
+          <div class="card">
+            <h3>Respect for Your Schedule</h3>
+            <p>Sessions run precisely on time. Prepare your key workflows, and we'll deliver maximum impact efficiently.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <h2>Common Questions Answered</h2>
+        <div class="faq-items">
+          <details>
+            <summary><strong>Is it truly free?</strong></summary>
+            <p>Absolutely. We invest in these sessions to build trust and showcase our expertise.</p>
+          </details>
+          <details>
+            <summary><strong>Any sales during the call?</strong></summary>
+            <p>None. Any potential collaboration is discussed post‑session via email, with no expectations.</p>
+          </details>
+          <details>
+            <summary><strong>What if my business has no obvious automation needs?</strong></summary>
+            <p>Every operation has them — we'll uncover hidden ones tailored to you.</p>
+          </details>
+          <details>
+            <summary><strong>Do I need tech expertise?</strong></summary>
+            <p>No. We explain everything in business terms, emphasizing results over jargon.</p>
+          </details>
+          <details>
+            <summary><strong>Not ready to act yet?</strong></summary>
+            <p>No problem. Gain clarity on possibilities and decide when it fits.</p>
+          </details>
+          <details>
+            <summary><strong>How advanced are the recommendations?</strong></summary>
+            <p>Customized to your skills and resources — many are no‑code and budget‑friendly.</p>
+          </details>
+          <details>
+            <summary><strong>Open to businesses beyond UK/Africa?</strong></summary>
+            <p>Yes, but our strengths shine in the UK‑Africa space with its unique challenges.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Social Proof / Voices -->
+      <section class="section" id="voices">
+        <h2>Voices from Satisfied Leaders</h2>
+        <div class="testimonials">
+          <blockquote>
+            <p>“This session revealed automation gems I'd overlooked. The clear ROI has us moving forward confidently.”</p>
+            <footer>— <strong>David M.</strong>, Manufacturing Director, Johannesburg</footer>
+          </blockquote>
+          <blockquote>
+            <p>“Practical, no‑nonsense advice that fits our setup. Affordable options we can implement right away.”</p>
+            <footer>— <strong>Grace K.</strong>, Operations Manager, Nairobi</footer>
+          </blockquote>
+          <blockquote>
+            <p>“Experts who truly grasp African ops. Their ideas work with our real‑world constraints.”</p>
+            <footer>— <strong>Peter S.</strong>, Import/Export Director, Cape Town</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="section" id="final-cta" aria-labelledby="final-cta-title">
+        <div class="card" style="border-color:#cdebd8">
+          <h2 id="final-cta-title" style="margin-top:0">Ready to Transform Your Operations?</h2>
+          <p><strong>Spots are limited</strong> — we cap at 15 sessions monthly for personalized attention.</p>
+          <div class="cta-row">
+            <a href="#booking" class="button button-lg">BOOK MY FREE SESSION NOW</a>
+          </div>
+          <div class="grid-2" style="margin-top:12px">
+            <div class="card">
+              <h3>Get in Touch</h3>
+              <p><strong>Email:</strong> automation@supplycheck.com<br/><strong>WhatsApp:</strong> +44 [number] (business hours)</p>
+              <p><strong>Company:</strong> SupplyCheck Ltd, United Kingdom</p>
+              <p><strong>Focus:</strong> AI‑driven automation for the UK‑Africa corridor<br/><strong>Goal:</strong> Empowering businesses to achieve more with less</p>
+            </div>
+            <div class="card">
+              <h3>No‑Risk Guarantee</h3>
+              <p>If we don’t find 3+ opportunities worth £10,000+ in yearly savings, we’ll extend the session for free until we do.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" aria-labelledby="footer-title">
+      <div class="container footer-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">SC</div>
+          <div>
+            <h4 id="footer-title" class="brand-name">Supplycheck</h4>
+            <p class="brand-tag">AI Automation Discovery — pragmatic, ROI‑focused, operator‑led.</p>
+          </div>
+        </div>
+        <div class="brand-tag">© 2025 SupplyCheck Ltd.</div>
+      </div>
+    </footer>
+  </body>
+  </html>
