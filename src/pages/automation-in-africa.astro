@@ -19,15 +19,15 @@ const pageDescription = "Sign up to receive weekly insights on automation across
         --panel: #f5f7fb;
         --muted: #5b667a;
         --text: #0b1020;
-        --accent: #2563eb;
-        --accent-strong: #1d4ed8;
-        --ring: #2563eb26;
+        --accent: #006a43;
+        --accent-strong: #005a38;
+        --ring: #006a4326;
       }
       * { box-sizing: border-box; }
       html, body { margin: 0; padding: 0; }
       body {
         font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-        background: radial-gradient(1200px 800px at 20% -10%, #eaf1ff 0%, #ffffff 70%), var(--bg);
+        background: radial-gradient(1200px 800px at 20% -10%, #e8f5ef 0%, #ffffff 70%), var(--bg);
         color: var(--text);
       }
       .container { max-width: 1120px; margin: 0 auto; padding: 24px; }
@@ -53,7 +53,7 @@ const pageDescription = "Sign up to receive weekly insights on automation across
         align-items: center;
         box-shadow: 0 0 0 6px var(--ring);
       }
-      .lead-badge { background: #eaf1ff; color: var(--accent); font-weight: 600; padding: 8px 10px; border-radius: 10px; font-size: 12px; }
+      .lead-badge { background: #e8f6ef; color: var(--accent); font-weight: 600; padding: 8px 10px; border-radius: 10px; font-size: 12px; }
       .lead-text { margin: 0; font-size: 14px; color: var(--text); }
 
       .signup {
@@ -81,8 +81,8 @@ const pageDescription = "Sign up to receive weekly insights on automation across
       }
       .button:hover { background: var(--accent); }
       .hero-graphic {
-        background: radial-gradient(400px 220px at 80% 20%, #e3edff 0%, #eef4ff 45%, #f7faff 80%);
-        border: 1px solid #dbe4fd;
+        background: radial-gradient(400px 220px at 80% 20%, #daf2e6 0%, #e9f7ef 45%, #f7fbf9 80%);
+        border: 1px solid #cdebd8;
         border-radius: 16px;
         height: 360px;
         display: grid;
@@ -93,14 +93,14 @@ const pageDescription = "Sign up to receive weekly insights on automation across
       .blob {
         position: absolute;
         width: 420px; height: 420px; border-radius: 50%;
-        background: radial-gradient(circle at 30% 30%, #2563eb22, transparent 60%);
+        background: radial-gradient(circle at 30% 30%, #006a4322, transparent 60%);
         filter: blur(10px);
         animation: float 10s ease-in-out infinite;
       }
       @keyframes float { 0%, 100% { transform: translateY(-6px);} 50% { transform: translateY(6px);} }
       .report {
         background: #ffffffcc;
-        border: 1px solid #cfe0ff;
+        border: 1px solid #cdebd8;
         border-radius: 14px;
         padding: 16px 18px;
         display: inline-flex;
@@ -131,8 +131,8 @@ const pageDescription = "Sign up to receive weekly insights on automation across
       /* CTA */
       .cta {
         margin: 32px 0 64px;
-        background: linear-gradient(90deg, #e9f0ff, #eef4ff);
-        border: 1px solid #cfe0ff;
+        background: linear-gradient(90deg, #e8f6ef, #f1fbf6);
+        border: 1px solid #cdebd8;
         border-radius: 14px;
         padding: 22px;
         display: grid;
@@ -143,16 +143,46 @@ const pageDescription = "Sign up to receive weekly insights on automation across
       .cta h3 { margin: 0 0 6px; font-size: 22px; }
       .cta p { margin: 0; color: var(--muted); }
 
+      /* Lists and utility */
+      .bullets { margin: 0 0 18px; padding-left: 20px; color: var(--text); }
+      .bullets li { margin: 8px 0; }
+      .preview { background: #f5f7fb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 14px; color: var(--muted); }
+      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+      .list-cross, .list-check { margin: 8px 0 0; padding-left: 20px; }
+      .list-cross li { margin: 6px 0; list-style: "✗ "; }
+      .list-check li { margin: 6px 0; list-style: "✓ "; }
+      .report-details .bullets { margin-top: 8px; }
+
+      /* Social proof */
+      .social-proof .logos { height: 48px; display: grid; place-items: center; color: var(--muted); border: 1px dashed #e5e7eb; border-radius: 10px; margin-bottom: 16px; }
+      .testimonials { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      blockquote { margin: 0; padding: 14px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; }
+      blockquote footer { margin-top: 8px; color: var(--muted); }
+
+      /* Form */
+      .signup-full .form { display: grid; gap: 10px; margin-top: 8px; }
+      .signup-full .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .select { appearance: none; background: #ffffff; border: 1px solid #cbd5e1; color: var(--text); padding: 14px; border-radius: 10px; }
+      .button-lg { padding: 16px 22px; font-size: 14px; }
+      .next-steps { margin: 12px 0 0; padding-left: 18px; color: var(--muted); }
+
+      /* FAQ */
+      .faq-items { display: grid; gap: 10px; }
+      details { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 12px 14px; }
+      summary { cursor: pointer; }
+
       /* Responsive */
       @media (max-width: 900px) {
         .hero { grid-template-columns: 1fr; }
         .cta { grid-template-columns: 1fr; }
         .grid { grid-template-columns: 1fr; }
+        .two-col { grid-template-columns: 1fr; }
+        .testimonials { grid-template-columns: 1fr; }
       }
 
       /* Footer */
       .footer {
-        background: #f7faff;
+        background: #f7fbf9;
         border-top: 1px solid #e5e7eb;
         margin-top: 24px;
       }
@@ -167,14 +197,14 @@ const pageDescription = "Sign up to receive weekly insights on automation across
       .logo {
         width: 36px; height: 36px; border-radius: 8px;
         display: grid; place-items: center;
-        background: #eaf1ff; color: var(--accent-strong);
+        background: #e8f6ef; color: var(--accent-strong);
         font-weight: 800;
       }
       .brand-name { margin: 0; font-size: 16px; }
       .brand-tag { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
       .social { display: flex; gap: 12px; }
       .icon { color: #334155; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; background: #ffffff; border: 1px solid #e5e7eb; text-decoration: none; }
-      .icon:hover { color: var(--accent-strong); border-color: #cfe0ff; background: #f5f9ff; }
+      .icon:hover { color: var(--accent-strong); border-color: #cdebd8; background: #f3faf6; }
     </style>
   </head>
   <body>
@@ -183,11 +213,11 @@ const pageDescription = "Sign up to receive weekly insights on automation across
       <section class="hero">
         <div>
           <div class="eyebrow">Weekly Newsletter</div>
-          <h1 class="title">Automation in Africa</h1>
-          <p class="subtitle">Timely analysis, case studies, and operator insights on the automation economy across African markets. <strong>Sign up today</strong> to get a free 10‑page automation report.</p>
+          <h1 class="title">Stop Losing to Competitors Who've Already Automated</h1>
+          <p class="subtitle">Get weekly insights on practical automation strategies specifically designed for African manufacturers, distributors, and logistics providers. No theory. No fluff. Just actionable steps you can implement this week.</p>
           <div class="lead-card" role="note" aria-label="Lead magnet">
             <span class="lead-badge">Free Report</span>
-            <p class="lead-text">10‑page guide: Where automation is compounding ROI in 2025</p>
+            <p class="lead-text"><strong>The Automation Advantage:</strong> How African SMEs Are Cutting Costs by 20–35% Through Smart Technology — free 10‑page report.</p>
           </div>
           <div class="signup" aria-label="Newsletter signup">
             <input class="input" type="email" placeholder="Enter your email" aria-label="Email" />
@@ -206,35 +236,148 @@ const pageDescription = "Sign up to receive weekly insights on automation across
         </div>
       </section>
 
-      <!-- Features -->
+      <!-- What You'll Get -->
       <section class="section" id="features">
-        <h2>What you’ll get</h2>
-        <p class="desc">No fluff. Actionable insights you can use this week.</p>
-        <div class="grid">
-          <div class="card">
-            <h3>Operator Playbooks</h3>
-            <p>Step‑by‑step breakdowns of real deployments across logistics, agri, and finance.</p>
+        <h2>What You’ll Get</h2>
+        <p class="desc">Free weekly newsletter includes:</p>
+        <ul class="bullets">
+          <li><strong>Practical automation wins</strong> you can implement with your current budget</li>
+          <li><strong>Case studies from African businesses</strong> who've successfully automated (without breaking the bank)</li>
+          <li><strong>Technology spotlights</strong> — tools that actually work for SMEs in Kenya and South Africa</li>
+          <li><strong>Cost-benefit breakdowns</strong> so you know exactly what ROI to expect</li>
+          <li><strong>Implementation roadmaps</strong> with realistic timelines for businesses your size</li>
+        </ul>
+        <div class="preview">
+          <em>“How a Kenyan Coffee Exporter Cut Processing Time by 40% Using Simple Inventory Automation (Total Investment: Under $2,000)”</em>
+        </div>
+      </section>
+
+      <!-- Social Proof -->
+      <section class="section social-proof" id="social-proof">
+        <h2>Trusted by Operations Leaders At:</h2>
+        <div class="logos">[Add logos/company names when available]</div>
+        <div class="testimonials">
+          <blockquote>
+            <p>“Finally, automation advice that understands our market realities. No more wondering if Silicon Valley solutions will work in Johannesburg.”</p>
+            <footer>— <strong>Sarah M.</strong>, Operations Manager, Cape Town</footer>
+          </blockquote>
+          <blockquote>
+            <p>“The case studies are gold. Seeing how other African companies tackled similar challenges gave us the confidence to automate our warehouse.”</p>
+            <footer>— <strong>James K.</strong>, Founder, Nairobi</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- Problem / Solution -->
+      <section class="section problem-solution" id="problem-solution">
+        <div class="two-col">
+          <div>
+            <h2>The Challenge You’re Facing</h2>
+            <ul class="list-cross">
+              <li>Your competitors are cutting costs while your margins stay tight</li>
+              <li>Manual processes are slowing down your growth</li>
+              <li>You know automation could help, but don't know where to start</li>
+              <li>Most automation advice assumes unlimited budgets and perfect infrastructure</li>
+              <li>You're wasting time researching solutions that don't work in African markets</li>
+            </ul>
           </div>
-          <div class="card">
-            <h3>Market Watch</h3>
-            <p>Signals that matter: funding, regulation, partners, and vendor moves.</p>
+          <div>
+            <h2>What You Get Instead</h2>
+            <ul class="list-check">
+              <li><strong>Budget-conscious strategies</strong> designed for businesses earning R1M–R50M annually</li>
+              <li><strong>Infrastructure-aware solutions</strong> that work with African connectivity and power realities</li>
+              <li><strong>Proven case studies</strong> from businesses operating in similar conditions</li>
+              <li><strong>Step-by-step implementation guides</strong> with realistic timelines</li>
+              <li><strong>Cost calculations</strong> so you know exactly what to expect before investing</li>
+            </ul>
           </div>
-          <div class="card">
-            <h3>Tools & Templates</h3>
-            <p>Decision frameworks, checklists, and ROI models to speed up execution.</p>
+        </div>
+      </section>
+
+      <!-- Free Report Details -->
+      <section class="section report-details" id="free-report">
+        <h2>Your Free Report: “The Automation Advantage”</h2>
+        <p class="desc">10 pages of actionable insights including:</p>
+        <ul class="bullets">
+          <li><strong>5 automation quick wins</strong> you can implement this month (under R10,000 each)</li>
+          <li><strong>ROI calculator template</strong> to evaluate automation opportunities</li>
+          <li><strong>Infrastructure checklist</strong> — what you need before automating</li>
+          <li><strong>Vendor evaluation framework</strong> specifically for African market conditions</li>
+          <li><strong>3 detailed case studies</strong> from Kenyan and South African businesses</li>
+          <li><strong>Technology roadmap template</strong> for 6‑month automation planning</li>
+        </ul>
+        <p class="desc"><strong>Download immediately after signup</strong> — no waiting for email delivery.</p>
+      </section>
+
+      <!-- About -->
+      <section class="section about" id="about">
+        <h2>From SupplyCheck: Your Operational Technology Partners</h2>
+        <p>We're not another software company trying to sell you expensive solutions. We're <strong>operational technology specialists</strong> who understand the unique challenges of running efficient businesses in African markets.</p>
+        <p><strong>Our mission:</strong> Democratize access to AI and automation technology for businesses of all sizes.</p>
+        <p><strong>Our experience:</strong> Working with 1–250 employee companies across manufacturing, distribution, and logistics in the UK‑Africa corridor.</p>
+        <p><strong>Our approach:</strong> People first, technical credibility, above and beyond service.</p>
+      </section>
+
+      <!-- Signup Form (design-only) -->
+      <section class="section signup-full" id="signup">
+        <h2>Ready to Stop Losing Ground to Automated Competitors?</h2>
+        <p class="desc"><strong>Join 800+ African business leaders</strong> who get weekly automation insights delivered every Tuesday.</p>
+        <form class="form" aria-label="Newsletter signup form (design-only)">
+          <input class="input" type="email" placeholder="Email Address" aria-label="Email Address" />
+          <div class="row">
+            <select class="select" aria-label="Company Location">
+              <option>Company Location</option>
+              <option>South Africa</option>
+              <option>Kenya</option>
+              <option>Other</option>
+            </select>
+            <select class="select" aria-label="Industry">
+              <option>Industry</option>
+              <option>Manufacturing</option>
+              <option>Distribution</option>
+              <option>Logistics</option>
+              <option>Retail</option>
+              <option>Other</option>
+            </select>
           </div>
-          <div class="card">
-            <h3>Case Studies</h3>
-            <p>From pilot to production: lessons learned and avoided pitfalls.</p>
-          </div>
-          <div class="card">
-            <h3>Expert Interviews</h3>
-            <p>Perspectives from builders and buyers on the ground.</p>
-          </div>
-          <div class="card">
-            <h3>Weekend Briefing</h3>
-            <p>A concise weekly roundup to keep your team aligned.</p>
-          </div>
+          <button type="button" class="button button-lg">GET MY FREE REPORT + WEEKLY INSIGHTS</button>
+        </form>
+        <ol class="next-steps">
+          <li><strong>Instant access</strong> to your free automation report</li>
+          <li><strong>Welcome email</strong> with 3 quick automation wins you can implement this week</li>
+          <li><strong>Weekly newsletters</strong> every Tuesday (starting next week)</li>
+          <li><strong>No spam, ever</strong> — unsubscribe anytime with one click</li>
+        </ol>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-items">
+          <details>
+            <summary><strong>Is this newsletter only for big companies?</strong></summary>
+            <p>No — we specifically focus on businesses with 1–250 employees. Most of our case studies and strategies are designed for companies with R1M–R50M annual revenue.</p>
+          </details>
+          <details>
+            <summary><strong>Will these strategies work with limited internet connectivity?</strong></summary>
+            <p>Absolutely. All our recommendations consider African infrastructure realities. We focus on solutions that work reliably, not just on paper.</p>
+          </details>
+          <details>
+            <summary><strong>How technical do I need to be?</strong></summary>
+            <p>Not at all. We explain everything in plain language and focus on practical implementation, not technical theory.</p>
+          </details>
+          <details>
+            <summary><strong>Do you only cover expensive automation software?</strong></summary>
+            <p>No — many of our featured solutions cost under R5,000 to implement. We always include budget-conscious alternatives.</p>
+          </details>
+          <details>
+            <summary><strong>How long are the newsletters?</strong></summary>
+            <p>3–5 minute reads. Packed with value, respectful of your time.</p>
+          </details>
+          <details>
+            <summary><strong>Can I unsubscribe anytime?</strong></summary>
+            <p>Yes, one‑click unsubscribe in every email. No questions asked.</p>
+          </details>
         </div>
       </section>
 
