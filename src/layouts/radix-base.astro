@@ -1,0 +1,27 @@
+---
+import { Theme } from "@radix-ui/themes";
+import { Container, Box } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Radix Base Layout</title>
+	</head>
+
+	<body>
+		<div class="grid place-items-center h-screen content-center">
+			<Theme>
+        <Box style={{ background: "var(--gray-a2)", borderRadius: "var(--radius-3)" }}>
+          <Container size="1">
+            <slot />
+          </Container>
+        </Box>
+      </Theme>
+		</div>
+	</body>
+</html>

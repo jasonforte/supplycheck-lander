@@ -1,5 +1,6 @@
 ---
-
+import '../styles/global.css'
+import Hero from './Hero'
 ---
 
 <html lang="en">
@@ -8,9 +9,27 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>SupplyCheck</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+
+    <header class="w-full bg-gray-100">
+      <div class="max-w-5xl mx-auto flex justify-between items-center h-16">
+
+        <div class="text-xl font-bold">SupplyCheck</div>
+
+        <div>
+          <button>Sign In</button>
+          <button>Sign Up</button>
+        </div>
+
+      </div>
+    </header>
+
+    <Hero />
+
+
+
+
 	</body>
 </html>
